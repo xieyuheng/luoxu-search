@@ -25,6 +25,10 @@ export class Message {
     this.group = opts.group
   }
 
+  // get time(): string {
+  //   return new Date(this.t).toString()
+  // }
+
   get link(): string {
     return `https://t.me/${this.group.group_name}/${this.id}`
   }

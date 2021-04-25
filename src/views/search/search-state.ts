@@ -1,15 +1,13 @@
-import {
-  TgIndexerClient,
-  SearchResult,
-  MessageResult,
-} from "@/clients/tg-indexer-client"
+import { Group } from "@/models/group"
+import { Message } from "@/models/message"
+import { TgIndexerClient } from "@/clients/tg-indexer-client"
 
 export class SearchState {
   group_id: number
   query: string
 
-  group_name: null | string = null
-  messages: null | Array<MessageResult> = null
+  group: null | Group = null
+  messages: null | Array<Message> = null
 
   constructor(opts: { group_id: number; query: string }) {
     this.group_id = opts.group_id
@@ -26,15 +24,15 @@ export class SearchState {
       query: this.query,
     })
 
-    this.group_name = result.group_name
-    this.messages = result.messages
-  }
+    const group = new Group({
+      group_id: this.group_id,
+      group_name: result.group_name,
+    })
 
-  message_link(message: MessageResult): string {
-    if (this.group_name) {
-      return `https://t.me/${this.group_name}/${message.id}`
-    } else {
-      return `https://t.me/${this.group_id}/${message.id}`
-    }
+    this.group = group
+
+    this.messages = result.messages.map(
+      (message) => new Message({ ...message, group })
+    )
   }
 }

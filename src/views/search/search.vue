@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div v-if="state.group_name">
+    <div v-if="state.group">
       <div class="px-3 py-4 border-b-2 border-gray-300">
-        <h1 class="font-bold">@{{ state.group_name }}</h1>
+        <h1 class="font-bold">@{{ state.group.group_name }}</h1>
       </div>
 
       <div v-if="state.messages" class="px-3">
@@ -14,7 +14,7 @@
             {{ message.from_name }}:
           </div>
           <div class="px-3 py-1">
-            <a :href="state.message_link(message)">{{ message.text }}</a>
+            <a :href="message.link">{{ message.text }}</a>
           </div>
         </div>
       </div>
