@@ -5,6 +5,9 @@
       <h1>{{ result.group_id }}</h1>
       <pre v-for="message in result.messages">{{ message }}</pre>
     </div>
+    <div v-else class="p-3 border border-gray-300 rounded-md">
+      <p>Loading...</p>
+    </div>
   </div>
 </template>
 
