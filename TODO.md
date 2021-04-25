@@ -1,4 +1,4 @@
-- [view] `search` -- to show search result -- like `www.google.com/search`
+- [view] `home` -- form and jump to `search`
 - [view model] `search-state`
-- [model] `searcher` -- client of the api
+- [model] `tg-indexer-client` -- client of the api
 - config api endpoint by `.env` file
