@@ -19,7 +19,7 @@ export default class extends Vue {
 
   async mounted(): Promise<void> {
     const indexer = new TgIndexerClient({
-      base_url: "http://78.142.193.28:9008",
+      base_url: process.env.VUE_APP_TG_INDEXER_BASE_URL
     })
 
     this.result = await indexer.search({

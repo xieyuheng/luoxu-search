@@ -2,5 +2,3 @@
 
 - [view model] `search-state`
 - [view] `search` -- need CORS
-
-- config api endpoint by `.env` file
