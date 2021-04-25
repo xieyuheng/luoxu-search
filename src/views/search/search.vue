@@ -1,6 +1,10 @@
 <template>
   <div>
-    <pre>{{ result }}</pre>
+    <div v-if="result">
+      <h1>{{ result.group_name }}</h1>
+      <h1>{{ result.group_id }}</h1>
+      <pre v-for="message in result.messages">{{ message }}</pre>
+    </div>
   </div>
 </template>
 

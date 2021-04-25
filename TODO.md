@@ -1,2 +1,3 @@
 - [view] `search` show message cards
+- [view] `search` handle loading
 - [view model] `search-state`
