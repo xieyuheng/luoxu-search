@@ -1,7 +1,5 @@
-- [view] echo `query`
-
-- [view] `message-card` time with link
+- [refactor] extract `message-card`
 
 - [refactor] extract `search-bar`
 - [view] `search` a search box to search again in this group
-- [refactor] extract `message-card`
+- [view] `search` echo `query` in `search-bar`

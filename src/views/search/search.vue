@@ -10,11 +10,22 @@
           Found {{ state.messages.length }} results :)
         </div>
         <div v-for="message in state.messages" class="py-2">
-          <div class="px-1 py-1 text-xs font-bold text-gray-600">
-            {{ message.from_name }}:
-          </div>
-          <div class="px-3 py-1">
-            <a :href="message.link">{{ message.text }}</a>
+          <div
+            class="px-3 py-1 border border-gray-300 rounded-lg shadow-sm max-w-max"
+          >
+            <p
+              class="py-1 text-xs font-bold text-gray-600 flex justify-between"
+            >
+              {{ message.from_name }}
+            </p>
+            <p class="py-2 break-words">{{ message.text }}</p>
+            <div class="flex justify-end">
+              <a :href="message.link" class="underline">
+                <p class="text-sm text-gray-500 hover:text-gray-900">
+                  {{ message.time }}
+                </p>
+              </a>
+            </div>
           </div>
         </div>
       </div>

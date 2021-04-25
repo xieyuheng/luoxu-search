@@ -25,9 +25,19 @@ export class Message {
     this.group = opts.group
   }
 
-  // get time(): string {
-  //   return new Date(this.t).toString()
-  // }
+  get time(): string {
+    const t = new Date(this.t * 1000)
+
+    const YYYY = t.getFullYear()
+    const MM = t.getMonth()
+    const DD = t.getDate()
+
+    const hh = t.getHours()
+    const mm = t.getMinutes()
+    const ss = t.getSeconds()
+
+    return `${YYYY}-${MM}-${DD} ${hh}:${mm}:${ss}`
+  }
 
   get link(): string {
     return `https://t.me/${this.group.group_name}/${this.id}`
