@@ -1,5 +1,3 @@
-- [view model] `search-state`
-
 - [view] echo `query`
 
 - [refactor] extract `search-bar`
