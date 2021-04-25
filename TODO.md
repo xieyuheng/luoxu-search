@@ -1,3 +1,5 @@
+- [model] extract `group` -- for `link` method
+
 - [view] echo `query`
 
 - [view] `message_link` -- improve style
