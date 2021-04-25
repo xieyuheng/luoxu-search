@@ -1,5 +1,5 @@
 <template>
-  <div class="p-3 text-blue-700">hi</div>
+  <div class="p-3 text-blue-700">LiLySearch</div>
 </template>
 
 <script lang="ts">

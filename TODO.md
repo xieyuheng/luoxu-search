@@ -1,4 +1,4 @@
-- [view] `home` -- form and jump to `search`
+- [view] `home` -- use a form and jump to `search` page
 - [view model] `search-state`
-- [model] `tg-indexer-client` -- client of the api
+- [view] `search` -- show search result in `<pre>`
 - config api endpoint by `.env` file
