@@ -1,19 +1,16 @@
-# lilysearch
+# LilySearch
 
-## Project setup
-```
-npm install
-```
+## 社区 / Community
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Contributions are welcome, see [current TODO list](TODO.md) for tasks. <br>
+(Please add yourself to [the AUTHORS list](AUTHORS) if you made any contributions.)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- We enforce C4 as collaboration protocol.
+  - [The C4 RFC](https://rfc.zeromq.org/spec:42/C4)
+- [Style Guide](STYLE-GUIDE.md)
+  - Observe the style of existing code and respect it.
+- [Code of Conduct](CODE-OF-CONDUCT.md)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 协议 / License
+
+- [GPLv3](LICENSE)

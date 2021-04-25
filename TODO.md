@@ -1,0 +1,1 @@
+- `home` in `views/home/`

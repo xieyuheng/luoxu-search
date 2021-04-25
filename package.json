@@ -4,24 +4,34 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "format": "prettier src --write"
+  },
+  "prettier": {
+    "semi": false,
+    "trailingComma": "es5"
   },
   "dependencies": {
-    "vue": "^2.6.11",
-    "vue-class-component": "^7.2.3",
+    "@tailwindcss/forms": "^0.3.2",
+    "@tailwindcss/postcss7-compat": "^2.1.2",
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^9.8.6",
+    "axios": "^0.21.1",
+    "js-base64": "^3.6.0",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2",
+    "vue": "^2.6.12",
+    "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^9.1.2",
-    "vue-router": "^3.2.0"
+    "vue-router": "^3.5.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "typescript": "~4.1.5",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "@vue/cli-plugin-router": "~4.5.12",
+    "@vue/cli-plugin-typescript": "~4.5.12",
+    "@vue/cli-service": "~4.5.12",
+    "prettier": "^2.2.1",
+    "prettier-plugin-tailwind-css": "^1.5.0",
+    "typescript": "~4.2.4",
+    "vue-template-compiler": "^2.6.12"
+  }
 }
