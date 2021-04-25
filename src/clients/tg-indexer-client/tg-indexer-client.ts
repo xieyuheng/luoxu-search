@@ -1,5 +1,9 @@
 import axios, { AxiosInstance } from "axios"
 
+// NOTE
+// - example:
+//   - http://78.142.193.28:9008/search?g=1031857103&q=wps
+
 export type SearchResult = {
   group_name: string
   group_id: string
@@ -39,7 +43,7 @@ export class TgIndexerClient {
     const { group_id, query } = opts
 
     const { data } = await this.requester.get(`/search`, {
-      query: {
+      params: {
         g: group_id,
         q: query,
       },

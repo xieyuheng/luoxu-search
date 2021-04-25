@@ -1,4 +1,4 @@
 - [view] `home` -- use a form and jump to `search` page
 - [view model] `search-state`
-- [view] `search` -- show search result in `<pre>`
+- [view] `search` -- need CORS
 - config api endpoint by `.env` file
