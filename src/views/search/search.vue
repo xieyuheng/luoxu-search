@@ -10,23 +10,7 @@
           Found {{ state.messages.length }} results :)
         </div>
         <div v-for="message in state.messages" class="py-2">
-          <div
-            class="max-w-max px-3 py-1 border border-gray-300 rounded-lg shadow-sm"
-          >
-            <p
-              class="flex justify-between py-1 text-xs font-bold text-gray-600"
-            >
-              {{ message.from_name }}
-            </p>
-            <p class="py-2 break-words">{{ message.text }}</p>
-            <div class="flex justify-end">
-              <a :href="message.link" class="underline">
-                <p class="hover:text-gray-900 text-sm text-gray-500">
-                  {{ message.time }}
-                </p>
-              </a>
-            </div>
-          </div>
+          <message-card :message="message" />
         </div>
       </div>
     </div>
@@ -44,6 +28,9 @@ import { SearchState as State } from "./search-state"
 
 @Component({
   name: "search",
+  components: {
+    "message-card": () => import("@/components/message-card"),
+  },
 })
 export default class extends Vue {
   @Prop() group_id!: number
