@@ -6,11 +6,16 @@
       </div>
 
       <div class="px-3">
+        <div class="px-1 py-2 text-gray-500">
+          Found {{ result.messages.length }} results :)
+        </div>
         <div v-for="message in result.messages" class="py-2">
           <div class="text-xs font-bold text-gray-600 py-1 px-1">
             {{ message.from_name }}:
           </div>
-          <div class="py-1 px-3">{{ message.text }}</div>
+          <div class="py-1 px-3">
+            {{ message.text }}
+          </div>
         </div>
       </div>
     </div>
