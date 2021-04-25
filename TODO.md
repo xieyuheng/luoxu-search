@@ -1,3 +1,4 @@
-- [view] `search` -- in `views/search/`
+- [view] `search` -- to show search result -- like `www.google.com/search`
 - [view model] `search-state`
+- [model] `searcher` -- client of the api
 - config api endpoint by `.env` file
