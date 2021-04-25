@@ -1,4 +1,3 @@
-- [view] `home` in `views/home/`
 - [view] `search` -- in `views/search/`
 - [view model] `search-state`
 - config api endpoint by `.env` file
