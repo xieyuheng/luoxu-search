@@ -14,7 +14,7 @@
             {{ message.from_name }}:
           </div>
           <div class="py-1 px-3">
-            {{ message.text }}
+            <a :href="state.message_link(message)">{{ message.text }}</a>
           </div>
         </div>
       </div>

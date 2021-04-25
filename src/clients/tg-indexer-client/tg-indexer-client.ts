@@ -4,18 +4,18 @@ import axios, { AxiosInstance } from "axios"
 // - example:
 //   - http://78.142.193.28:9008/search?g=1031857103&q=wps
 
-export type SearchResult = {
-  group_name: string
-  group_id: string
-  messages: Array<MessageResult>
-}
-
 export type MessageResult = {
   id: number
   from_id: number
   from_name: string
   text: string
   t: number
+}
+
+export type SearchResult = {
+  group_name: string
+  group_id: string
+  messages: Array<MessageResult>
 }
 
 export class TgIndexerClient {

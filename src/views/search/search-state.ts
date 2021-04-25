@@ -1,4 +1,8 @@
-import { TgIndexerClient, SearchResult, MessageResult } from "@/clients/tg-indexer-client"
+import {
+  TgIndexerClient,
+  SearchResult,
+  MessageResult,
+} from "@/clients/tg-indexer-client"
 
 export class SearchState {
   group_id: number
@@ -24,5 +28,15 @@ export class SearchState {
 
     this.group_name = result.group_name
     this.messages = result.messages
+  }
+
+  message_link(message: MessageResult): string {
+
+    if (this.group_name) {
+      console.log(`https://t.me/${this.group_name}/${message.id}`)
+      return `https://t.me/${this.group_name}/${message.id}`
+    } else {
+      return `https://t.me/${this.group_id}/${message.id}`
+    }
   }
 }
