@@ -31,7 +31,6 @@ export class SearchState {
   }
 
   message_link(message: MessageResult): string {
-
     if (this.group_name) {
       return `https://t.me/${this.group_name}/${message.id}`
     } else {
