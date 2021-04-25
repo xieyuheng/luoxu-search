@@ -1,8 +1,7 @@
-- [model] extract `group` -- for `link` method
-
 - [view] echo `query`
 
-- [view] `message_link` -- improve style
+- [view model] `search-state` use `group` and `message`
+- [model] link `message_link` -- improve style
 - [view] `message-card` time
 
 - [refactor] extract `search-bar`
