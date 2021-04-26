@@ -4,7 +4,6 @@ import { luoxu_client_instance as client } from "@/clients/luoxu-client"
 
 export class HomeState {
   query: string = ""
-  group_id: string = ""
   groups: null | Array<Group> = null
 
   constructor() {}
