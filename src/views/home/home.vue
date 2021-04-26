@@ -38,6 +38,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator"
+import { HomeState as State } from "./home-state"
 
 @Component({
   name: "home",
@@ -49,6 +50,8 @@ import { Component, Vue } from "vue-property-decorator"
 export default class extends Vue {
   query: string = ""
   group_id: string = ""
+
+  state = new State()
 
   search(): void {
     this.$router.push({

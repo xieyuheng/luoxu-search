@@ -19,6 +19,12 @@ export type SearchResult = {
   messages: Array<MessageResult>
 }
 
+export type GroupResult = {
+  group_id: number
+  name: string
+  pub_id: string
+}
+
 export class LuoxuClient {
   base_url: string
 
@@ -49,6 +55,12 @@ export class LuoxuClient {
         q: query,
       },
     })
+
+    return data
+  }
+
+  async groups(): Promise<Array<GroupResult>> {
+    const { data } = await this.requester.get(`/groups`)
 
     return data
   }
