@@ -40,6 +40,6 @@ export class Message {
   }
 
   get link(): string {
-    return `https://t.me/${this.group.group_name}/${this.id}`
+    return `https://t.me/${this.group.group_pub_id}/${this.id}`
   }
 }

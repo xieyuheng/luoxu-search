@@ -14,7 +14,7 @@ export type MessageResult = {
 }
 
 export type SearchResult = {
-  group_name: string
+  group_pub_id: string
   group_id: string
   messages: Array<MessageResult>
 }

@@ -14,25 +14,39 @@ export class SearchState {
     this.query = opts.query
   }
 
-  async init(): Promise<void> {
-    const indexer = new LuoxuClient({
+  get client(): LuoxuClient {
+    return new LuoxuClient({
       base_url: process.env.VUE_APP_LUOXU_BASE_URL,
     })
+  }
 
-    const result = await indexer.search({
+  async search(): Promise<void> {
+    const result = await this.client.search({
       group_id: this.group_id,
       query: this.query,
     })
 
+    console.log({ result })
+
     const group = new Group({
       group_id: this.group_id,
-      group_name: result.group_name,
+      group_pub_id: result.group_pub_id,
     })
+
+    console.log({ group })
 
     this.group = group
 
-    this.messages = result.messages.map(
-      (message) => new Message({ ...message, group })
-    )
+    if (this.query) {
+      this.messages = result.messages.map(
+        (message) =>
+          new Message({
+            ...message,
+            group,
+          })
+      )
+    } else {
+      this.messages = null
+    }
   }
 }

@@ -1,30 +1,33 @@
 <template>
   <div>
-    <div v-if="state.group && state.messages">
-      <div class="px-3 py-4 border-b-2 border-gray-300">
-        <!-- <form
-             class="flex flex-col items-center w-full px-5 my-6"
-             @submit.prevent="search"
-             >
-             <div
-             class="md:w-2/5 flex w-full p-1 px-6 border-2 border-gray-200 rounded-lg shadow-md"
-             >
-             <input
-             v-model="query"
-             class="w-full p-2 border-none"
-             type="text"
-             required
-             />
+    <div v-if="state.group">
+      <div class="flex flex-col justify-center py-3 border-b-2 border-gray-300">
+        <div class="flex flex-col items-baseline md:flex-row md:pt-3 md:pl-2">
+          <h1 class="py-1 px-3 md:px-6 text-2xl text-gray-700">LiLySearch</h1>
+          <form class="py-1 px-3 md:px-0 w-full" @submit.prevent="search">
+            <div
+              class="md:w-4/5 flex w-full px-2 border-2 border-gray-200 rounded-lg shadow-md"
+            >
+              <input
+                v-model="state.query"
+                class="w-full m-2 p-2 border-none"
+                type="text"
+                required
+              />
 
-             <button class="p-1 my-2 font-bold">
-             <icon-search-circle class="my-2 text-gray-500" />
-             </button>
-             </div>
-             </form> -->
-        <h1 class="font-bold">@{{ state.group.group_name }}</h1>
+              <button class="p-1 my-2 font-bold">
+                <icon-search-circle class="text-gray-500" />
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <h1 class="px-3 md:px-44 pt-1 text-gray-800">
+          @{{ state.group.group_pub_id }}
+        </h1>
       </div>
 
-      <div class="px-3">
+      <div v-if="state.messages" class="px-3 md:px-44">
         <div class="px-1 py-2 text-gray-500">
           Found {{ state.messages.length }} results :)
         </div>
@@ -62,11 +65,19 @@ export default class extends Vue {
   })
 
   async mounted(): Promise<void> {
-    this.state.init()
+    await this.state.search()
   }
 
-  search(): void {
-    console.log("search")
+  async search(): Promise<void> {
+    const query = {
+      g: this.group_id.toString(),
+      q: this.query,
+    }
+
+    if (query.g !== this.$route.query.g || query.q !== this.$route.query.q) {
+      this.$router.push({ path: "/search", query })
+      await this.state.search()
+    }
   }
 }
 </script>
