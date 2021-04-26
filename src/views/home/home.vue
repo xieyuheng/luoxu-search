@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="flex flex-col items-center w-screen pt-10 pb-4">
+    <div class="flex flex-col items-center w-screen pt-10">
       <h1 class="text-3xl text-gray-700">落絮</h1>
       <form
-        class="flex flex-col items-center w-full px-5 my-6"
+        class="flex flex-col items-center w-full px-5 mt-6 mb-4"
         @submit.prevent="search"
       >
         <div
