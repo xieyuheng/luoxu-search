@@ -1,6 +1,6 @@
 import { Group } from "@/models/group"
 import { Message } from "@/models/message"
-import { LuoxuClient } from "@/clients/luoxu-client"
+import { luoxu_client_instance as client } from "@/clients/luoxu-client"
 
 export class HomeState {
   query: string = ""
@@ -8,12 +8,6 @@ export class HomeState {
   groups: null | Array<Group> = null
 
   constructor() {}
-
-  get client(): LuoxuClient {
-    return new LuoxuClient({
-      base_url: process.env.VUE_APP_LUOXU_BASE_URL,
-    })
-  }
 
   async init(): Promise<void> {
     const result = await this.client.groups()

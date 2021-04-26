@@ -1,6 +1,6 @@
 import { Group } from "@/models/group"
 import { Message } from "@/models/message"
-import { LuoxuClient } from "@/clients/luoxu-client"
+import { luoxu_client_instance as client } from "@/clients/luoxu-client"
 
 export class SearchState {
   group_id: number
@@ -12,12 +12,6 @@ export class SearchState {
   constructor(opts: { group_id: number; query: string }) {
     this.group_id = opts.group_id
     this.query = opts.query
-  }
-
-  get client(): LuoxuClient {
-    return new LuoxuClient({
-      base_url: process.env.VUE_APP_LUOXU_BASE_URL,
-    })
   }
 
   async search(): Promise<void> {
