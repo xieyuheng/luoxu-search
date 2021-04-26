@@ -71,7 +71,7 @@ export default class extends Vue {
   async search(): Promise<void> {
     const query = {
       g: this.group_id.toString(),
-      q: this.query,
+      q: this.state.query,
     }
 
     if (query.g !== this.$route.query.g || query.q !== this.$route.query.q) {
