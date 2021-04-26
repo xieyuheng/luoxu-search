@@ -2,17 +2,17 @@
   <div>
     <div v-if="state.group">
       <div class="flex flex-col justify-center py-3 border-b-2 border-gray-300">
-        <div class="flex flex-col items-baseline md:flex-row md:pt-3 md:pl-2">
-          <h1 class="py-1 px-3 md:px-6 text-2xl text-gray-700">
+        <div class="md:flex-row md:pt-3 md:pl-2 flex flex-col items-baseline">
+          <h1 class="md:px-6 px-3 py-1 text-2xl text-gray-700">
             <router-link :to="{ path: '/' }">LiLySearch</router-link>
           </h1>
-          <form class="py-1 px-3 md:px-0 w-full" @submit.prevent="search">
+          <form class="md:px-0 w-full px-3 py-1" @submit.prevent="search">
             <div
               class="md:w-4/5 flex w-full px-2 border-2 border-gray-200 rounded-lg shadow-md"
             >
               <input
                 v-model="state.query"
-                class="w-full m-2 p-2 border-none"
+                class="w-full p-2 m-2 border-none"
                 type="text"
                 required
               />
@@ -24,12 +24,12 @@
           </form>
         </div>
 
-        <h1 class="px-3 md:px-44 pt-1 text-gray-800">
+        <h1 class="md:px-44 px-3 pt-1 text-gray-800">
           @{{ state.group.group_pub_id }}
         </h1>
       </div>
 
-      <div v-if="state.messages" class="px-3 md:px-44">
+      <div v-if="state.messages" class="md:px-44 px-3">
         <div class="px-1 py-2 text-gray-500">
           Found {{ state.messages.length }} results :)
         </div>
