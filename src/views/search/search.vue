@@ -3,7 +3,7 @@
     <div v-if="state.group">
       <div class="flex flex-col justify-center py-3 border-b-2 border-gray-300">
         <div class="md:flex-row md:pt-3 md:pl-2 flex flex-col items-baseline">
-          <h1 class="md:px-10 px-3 py-1 text-2xl text-gray-700 min-w-max">
+          <h1 class="md:px-10 min-w-max px-3 py-1 text-2xl text-gray-700">
             <router-link :to="{ path: '/' }">落絮</router-link>
           </h1>
           <form class="md:px-0 w-full px-3 py-1" @submit.prevent="search">
