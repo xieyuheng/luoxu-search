@@ -1,9 +1,9 @@
 import axios, { AxiosInstance } from "axios"
 
-// NOTE
-// - example:
+// NOTE luoxu is a opensource telegram indexer:
+// - repo: https://github.com/lilydjwg/luoxu
+// - example deployment:
 //   - https://lab.lilydjwg.me/luoxu/search?g=1031857103&q=wps
-
 
 export type MessageResult = {
   id: number
@@ -19,7 +19,7 @@ export type SearchResult = {
   messages: Array<MessageResult>
 }
 
-export class TgIndexerClient {
+export class LuoxuClient {
   base_url: string
 
   constructor(opts: { base_url: string }) {

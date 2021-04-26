@@ -1,5 +1,3 @@
-- change endpoint naming
-
 - [refactor] extract `search-bar`
 
 - [view] `search` a search box to search again in this group

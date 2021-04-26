@@ -1,6 +1,6 @@
 import { Group } from "@/models/group"
 import { Message } from "@/models/message"
-import { TgIndexerClient } from "@/clients/tg-indexer-client"
+import { LuoxuClient } from "@/clients/luoxu-client"
 
 export class SearchState {
   group_id: number
@@ -15,8 +15,8 @@ export class SearchState {
   }
 
   async init(): Promise<void> {
-    const indexer = new TgIndexerClient({
-      base_url: process.env.VUE_APP_TG_INDEXER_BASE_URL,
+    const indexer = new LuoxuClient({
+      base_url: process.env.VUE_APP_LUOXU_BASE_URL,
     })
 
     const result = await indexer.search({
