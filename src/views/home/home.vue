@@ -18,19 +18,20 @@
           />
         </div>
 
-        <label class="flex items-baseline py-3">
-          <p class="text-gray-700">Group ID:</p>
-          <div class="ml-2 border-b border-gray-700">
-            <input
-              v-model="state.group_id"
-              class="border-none"
-              type="number"
-              placeholder="must be a number"
-              required
-            />
-          </div>
-        </label>
-        <button class="p-1 my-2 font-bold">SEARCH</button>
+        <div class="flex items-baseline">
+          <p class="pr-2 text-lg">Group:</p>
+          <select v-model="selected_group_id" class="mt-4 mb-2">
+            <option
+              v-for="group in state.groups"
+              :value="group.id"
+              :key="group.id"
+            >
+              {{ group.name }}
+            </option>
+          </select>
+        </div>
+
+        <button class="p-1 font-bold text-gray-800">SEARCH</button>
       </form>
     </div>
   </div>
@@ -38,6 +39,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator"
+import { Group } from "@/models/group"
 import { HomeState as State } from "./home-state"
 
 @Component({
@@ -50,28 +52,21 @@ import { HomeState as State } from "./home-state"
 export default class extends Vue {
   state = new State()
 
+  selected_group_id: null | string = null
+
   async mounted(): Promise<void> {
     await this.state.init()
   }
 
   search(): void {
-    const query = {
-      g: this.state.group_id,
-      q: this.state.query,
-    }
+    if (this.selected_group_id) {
+      const query = {
+        g: this.selected_group_id.toString(),
+        q: this.state.query,
+      }
 
-    this.$router.push({ path: "/search", query })
+      this.$router.push({ path: "/search", query })
+    }
   }
 }
 </script>
-
-<style scoped>
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-</style>
