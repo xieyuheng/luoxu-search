@@ -3,7 +3,9 @@
     <div v-if="state.group">
       <div class="flex flex-col justify-center py-3 border-b-2 border-gray-300">
         <div class="flex flex-col items-baseline md:flex-row md:pt-3 md:pl-2">
-          <h1 class="py-1 px-3 md:px-6 text-2xl text-gray-700">LiLySearch</h1>
+          <h1 class="py-1 px-3 md:px-6 text-2xl text-gray-700">
+            <router-link :to="{ path: '/' }">LiLySearch</router-link>
+          </h1>
           <form class="py-1 px-3 md:px-0 w-full" @submit.prevent="search">
             <div
               class="md:w-4/5 flex w-full px-2 border-2 border-gray-200 rounded-lg shadow-md"
