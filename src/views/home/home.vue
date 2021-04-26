@@ -53,6 +53,10 @@ export default class extends Vue {
 
   state = new State()
 
+  async mounted(): Promise<void> {
+    await this.state.init()
+  }
+
   search(): void {
     this.$router.push({
       path: "/search",
