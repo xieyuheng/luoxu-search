@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div v-if="state.group">
+    <div v-if="state.group && state.messages">
       <div class="px-3 py-4 border-b-2 border-gray-300">
         <h1 class="font-bold">@{{ state.group.group_name }}</h1>
       </div>
 
-      <div v-if="state.messages" class="px-3">
+      <div class="px-3">
         <div class="px-1 py-2 text-gray-500">
           Found {{ state.messages.length }} results :)
         </div>
@@ -15,9 +15,7 @@
       </div>
     </div>
     <div v-else class="flex justify-center my-8">
-      <p class="inline-block p-3 border border-gray-300 rounded-md">
-        Loading...
-      </p>
+      <search-loading :state="state" />
     </div>
   </div>
 </template>
@@ -30,6 +28,7 @@ import { SearchState as State } from "./search-state"
   name: "search",
   components: {
     "message-card": () => import("@/components/message-card"),
+    "search-loading": () => import("@/views/search/search-loading.vue"),
   },
 })
 export default class extends Vue {

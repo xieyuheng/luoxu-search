@@ -2,7 +2,8 @@ import axios, { AxiosInstance } from "axios"
 
 // NOTE
 // - example:
-//   - http://78.142.193.28:9008/search?g=1031857103&q=wps
+//   - https://lab.lilydjwg.me/luoxu/search?g=1031857103&q=wps
+
 
 export type MessageResult = {
   id: number
