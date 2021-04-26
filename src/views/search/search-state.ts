@@ -26,14 +26,10 @@ export class SearchState {
       query: this.query,
     })
 
-    console.log({ result })
-
     const group = new Group({
       group_id: this.group_id,
       group_pub_id: result.group_pub_id,
     })
-
-    console.log({ group })
 
     this.group = group
 
