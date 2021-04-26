@@ -14,8 +14,8 @@ export type MessageResult = {
 }
 
 export type SearchResult = {
+  group_id: number
   group_pub_id: string
-  group_id: string
   messages: Array<MessageResult>
 }
 
@@ -62,6 +62,6 @@ export class LuoxuClient {
   async groups(): Promise<Array<GroupResult>> {
     const { data } = await this.requester.get(`/groups`)
 
-    return data
+    return data.groups
   }
 }

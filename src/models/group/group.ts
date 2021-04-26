@@ -1,25 +1,28 @@
-import { GroupResult } from "@/clients/luoxu-client"
+import { GroupResult, SearchResult } from "@/clients/luoxu-client"
 
 export class Group {
-  group_id: number
-  group_pub_id: string
-  group_name: string
+  id: number
+  pub_id: string
+  name: string
 
-  constructor(opts: {
-    group_id: number
-    group_pub_id: string
-    group_name?: string
-  }) {
-    this.group_id = opts.group_id
-    this.group_pub_id = opts.group_pub_id
-    this.group_name = opts.group_name || opts.group_pub_id
+  constructor(opts: { id: number; pub_id: string; name?: string }) {
+    this.id = opts.id
+    this.pub_id = opts.pub_id
+    this.name = opts.name || opts.pub_id
   }
 
-  static from_group_result(group_result: GroupResult): Group {
+  static from_group_result(result: GroupResult): Group {
     return new Group({
-      group_id: group_result.group_id,
-      group_pub_id: group_result.pub_id,
-      group_name: group_result.name,
+      id: result.group_id,
+      pub_id: result.pub_id,
+      name: result.name,
+    })
+  }
+
+  static from_search_result(result: SearchResult): Group {
+    return new Group({
+      id: result.group_id,
+      pub_id: result.group_pub_id,
     })
   }
 }

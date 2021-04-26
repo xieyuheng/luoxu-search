@@ -55,6 +55,8 @@ export default class extends Vue {
 
   async mounted(): Promise<void> {
     await this.state.init()
+
+    console.log(this.state.groups)
   }
 
   search(): void {

@@ -4,10 +4,7 @@
 
 - extract client instance
 
-- [model] update `group`
-
-- static `Group.from_search_result`
-
+- [model] `group` simple field names
 
 - [view] `home` list of group
 

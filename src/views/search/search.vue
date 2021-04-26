@@ -25,7 +25,7 @@
         </div>
 
         <h1 class="md:px-44 px-3 pt-1 text-gray-800">
-          @{{ state.group.group_pub_id }}
+          @{{ state.group.pub_id }}
         </h1>
       </div>
 

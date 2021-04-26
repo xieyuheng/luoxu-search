@@ -26,10 +26,7 @@ export class SearchState {
       query: this.query,
     })
 
-    const group = new Group({
-      group_id: this.group_id,
-      group_pub_id: result.group_pub_id,
-    })
+    const group = Group.from_search_result(result)
 
     this.group = group
 

@@ -15,6 +15,7 @@ export class HomeState {
 
   async init(): Promise<void> {
     const result = await this.client.groups()
+
     this.groups = result.map(Group.from_group_result)
   }
 }
