@@ -11,6 +11,8 @@ export class Group {
     this.name = opts.name || opts.pub_id
   }
 
+  // NOTE luoxu-client api adopter functions
+
   static from_group_result(result: GroupResult): Group {
     return new Group({
       id: result.group_id,
