@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex flex-col items-center w-screen py-10">
+    <div class="flex flex-col items-center w-screen pt-10 pb-4">
       <h1 class="text-3xl text-gray-700">LiLySearch</h1>
       <form
         class="flex flex-col items-center w-full px-5 my-6"
@@ -34,6 +34,10 @@
         <button class="p-1 font-bold text-gray-800">SEARCH</button>
       </form>
     </div>
+
+    <div class="flex flex-col items-center">
+      <home-pome />
+    </div>
   </div>
 </template>
 
@@ -45,6 +49,7 @@ import { HomeState as State } from "./home-state"
 @Component({
   name: "home",
   components: {
+    "home-pome": () => import("@/views/home/home-poem.vue"),
     "icon-search-circle": () =>
       import("@/components/icons/icon-search-circle.vue"),
   },
