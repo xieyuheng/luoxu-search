@@ -1,5 +1,5 @@
 <template>
-  <p class="inline-block p-3 border border-gray-300 rounded-md">加载中...</p>
+  <p class="inline-block p-3 border border-gray-300 rounded-md">搜索中...</p>
 </template>
 
 <script lang="ts">
