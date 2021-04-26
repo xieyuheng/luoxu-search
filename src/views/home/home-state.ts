@@ -3,6 +3,8 @@ import { Message } from "@/models/message"
 import { LuoxuClient } from "@/clients/luoxu-client"
 
 export class HomeState {
+  query: string = ""
+  group_id: string = ""
   groups: null | Array<Group> = null
 
   constructor() {}

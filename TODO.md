@@ -1,12 +1,6 @@
-- [view] `home` use state class
-
-- [view] `home` test client `group` endpoint
+- [view] `home` list of group
 
 - extract client instance
-
-- [model] `group` simple field names
-
-- [view] `home` list of group
 
 - [component] `page-header`
 - [component] `page-footer`

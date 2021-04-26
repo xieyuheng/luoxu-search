@@ -78,6 +78,7 @@ export default class extends Vue {
 
     if (query.g !== this.$route.query.g || query.q !== this.$route.query.q) {
       this.$router.push({ path: "/search", query })
+
       await this.state.search()
     }
   }

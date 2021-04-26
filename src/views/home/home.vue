@@ -11,7 +11,7 @@
         >
           <icon-search-circle class="my-2 text-gray-500" />
           <input
-            v-model="query"
+            v-model="state.query"
             class="w-full p-2 ml-2 border-none"
             type="text"
             required
@@ -22,7 +22,7 @@
           <p class="text-gray-700">Group ID:</p>
           <div class="ml-2 border-b border-gray-700">
             <input
-              v-model="group_id"
+              v-model="state.group_id"
               class="border-none"
               type="number"
               placeholder="must be a number"
@@ -48,25 +48,19 @@ import { HomeState as State } from "./home-state"
   },
 })
 export default class extends Vue {
-  query: string = ""
-  group_id: string = ""
-
   state = new State()
 
   async mounted(): Promise<void> {
     await this.state.init()
-
-    console.log(this.state.groups)
   }
 
   search(): void {
-    this.$router.push({
-      path: "/search",
-      query: {
-        g: this.group_id,
-        q: this.query,
-      },
-    })
+    const query = {
+      g: this.state.group_id,
+      q: this.state.query,
+    }
+
+    this.$router.push({ path: "/search", query })
   }
 }
 </script>
