@@ -7,12 +7,12 @@
         @submit.prevent="search"
       >
         <div
-          class="md:w-2/5 flex w-full p-1 px-6 border-2 border-gray-200 rounded-lg shadow-md"
+          class="md:w-2/5 flex w-full p-1 px-3 border-2 border-gray-200 rounded-lg shadow-md"
         >
           <icon-search-circle class="my-2 text-gray-500" />
           <input
             v-model="state.query"
-            class="w-full p-2 ml-2 border-none"
+            class="w-full p-2 ml-3 border-none"
             type="text"
             required
           />
