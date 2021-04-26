@@ -15,7 +15,7 @@ export class SearchState {
   }
 
   async search(): Promise<void> {
-    const result = await this.client.search({
+    const result = await client.search({
       group_id: this.group_id,
       query: this.query,
     })

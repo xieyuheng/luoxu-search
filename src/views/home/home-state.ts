@@ -10,7 +10,7 @@ export class HomeState {
   constructor() {}
 
   async init(): Promise<void> {
-    const result = await this.client.groups()
+    const result = await client.groups()
 
     this.groups = result.map(Group.from_group_result)
   }
