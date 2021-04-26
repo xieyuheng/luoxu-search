@@ -6,7 +6,7 @@ export class Message {
   from_id: number
   from_name: string
   text: string
-  t: number
+  t: number // NOTE unix timestamp
 
   group: Group
 
@@ -40,6 +40,8 @@ export class Message {
   }
 
   get time(): string {
+    // NOTE to use unix timestamp in js multiple it by 1000
+
     const t = new Date(this.t * 1000)
 
     const YYYY = t.getFullYear()
