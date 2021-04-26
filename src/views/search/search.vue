@@ -3,8 +3,8 @@
     <div v-if="state.group">
       <div class="flex flex-col justify-center py-3 border-b-2 border-gray-300">
         <div class="md:flex-row md:pt-3 md:pl-2 flex flex-col items-baseline">
-          <h1 class="md:px-6 px-3 py-1 text-2xl text-gray-700">
-            <router-link :to="{ path: '/' }">LiLySearch</router-link>
+          <h1 class="md:px-10 px-3 py-1 text-2xl text-gray-700 min-w-max">
+            <router-link :to="{ path: '/' }">落絮</router-link>
           </h1>
           <form class="md:px-0 w-full px-3 py-1" @submit.prevent="search">
             <div
@@ -31,7 +31,7 @@
 
       <div v-if="state.messages" class="md:px-44 px-3">
         <div class="px-1 py-2 text-gray-500">
-          Found {{ state.messages.length }} results :)
+          找到 {{ state.messages.length }} 条消息 --
         </div>
         <div v-for="message in state.messages" class="py-2">
           <message-card :message="message" />

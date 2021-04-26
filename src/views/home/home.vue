@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex flex-col items-center w-screen pt-10 pb-4">
-      <h1 class="text-3xl text-gray-700">LiLySearch</h1>
+      <h1 class="text-3xl text-gray-700">落絮</h1>
       <form
         class="flex flex-col items-center w-full px-5 my-6"
         @submit.prevent="search"
@@ -19,7 +19,7 @@
         </div>
 
         <div class="flex items-baseline">
-          <p class="pr-2 text-lg">Group:</p>
+          <p class="pr-2 text-lg">群：</p>
           <select v-model="selected_group_id" class="mt-4 mb-2">
             <option
               v-for="group in state.groups"
@@ -31,7 +31,7 @@
           </select>
         </div>
 
-        <button class="p-1 font-bold text-gray-800">SEARCH</button>
+        <button class="p-1 font-bold text-gray-800">搜索</button>
       </form>
     </div>
 
