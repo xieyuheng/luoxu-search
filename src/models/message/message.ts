@@ -1,4 +1,5 @@
 import { Group } from "@/models/group"
+import { MessageResult } from "@/clients/luoxu-client"
 
 export class Message {
   id: number
@@ -23,6 +24,19 @@ export class Message {
     this.text = opts.text
     this.t = opts.t
     this.group = opts.group
+  }
+
+  static from_message_result_and_group(
+    result: MessageResult & { group: Group }
+  ): Message {
+    return new Message({
+      id: result.id,
+      from_id: result.from_id,
+      from_name: result.from_name,
+      text: result.text,
+      t: result.t,
+      group: result.group,
+    })
   }
 
   get time(): string {

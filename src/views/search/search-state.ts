@@ -31,12 +31,11 @@ export class SearchState {
     this.group = group
 
     if (this.query) {
-      this.messages = result.messages.map(
-        (message) =>
-          new Message({
-            ...message,
-            group,
-          })
+      this.messages = result.messages.map((message) =>
+        Message.from_message_result_and_group({
+          ...message,
+          group,
+        })
       )
     } else {
       this.messages = null
