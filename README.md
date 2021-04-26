@@ -1,5 +1,6 @@
 # 落絮搜索
 
+- 使用：https://luoxu-search.vercel.app
 - 后端：[luoxu](https://github.com/lilydjwg/luoxu)
 
 ## 贡献 / Contributions
