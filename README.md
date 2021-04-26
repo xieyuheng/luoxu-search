@@ -1,15 +1,16 @@
-# LilySearch
+# 落絮搜索
 
-## 社区 / Community
+## 贡献 / Contributions
 
-Contributions are welcome, see [current TODO list](TODO.md) for tasks. <br>
-(Please add yourself to [the AUTHORS list](AUTHORS) if you made any contributions.)
+> 提 issue 请保持礼貌
+> - 不要给同伴带来不必要的压力和负面情绪
 
-- We enforce C4 as collaboration protocol.
-  - [The C4 RFC](https://rfc.zeromq.org/spec:42/C4)
-- [Style Guide](STYLE-GUIDE.md)
-  - Observe the style of existing code and respect it.
-- [Code of Conduct](CODE-OF-CONDUCT.md)
+- issue 与 PR 可以参考：[The C4 RFC](https://rfc.zeromq.org/spec:42/C4)
+- 如有贡献，请将自己加到作者列表中 ^-^：[AUTHORS.md](AUTHORS.md)
+- 当前 TODO： [TODO.md](TODO.md)
+- 风格指南：[STYLE-GUIDE.md](STYLE-GUIDE.md)
+- 骇客笔记：[NOTE.md](NOTE.md)
+- 行为守则：[CODE-OF-CONDUCT.md](CODE-OF-CONDUCT.md)
 
 ## 协议 / License
 
