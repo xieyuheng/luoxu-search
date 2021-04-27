@@ -31,18 +31,18 @@ export class Message {
     const t = new Date(this.t * 1000)
 
     const YYYY = t.getFullYear()
+    const MM = leftpad((t.getMonth() + 1).toString())
+    const DD = leftpad(t.getDate().toString())
 
-    let MM = (t.getMonth() + 1).toString()
-    MM = MM.length === 1 ? "0" + MM : MM
-
-    let DD = t.getDate().toString()
-    DD = DD.length === 1 ? "0" + DD : DD
-
-    const hh = t.getHours()
-    const mm = t.getMinutes()
-    const ss = t.getSeconds()
+    const hh = leftpad(t.getHours().toString())
+    const mm = leftpad(t.getMinutes().toString())
+    const ss = leftpad(t.getSeconds().toString())
 
     return `${YYYY}-${MM}-${DD} ${hh}:${mm}:${ss}`
+
+    function leftpad(s: string): string {
+      return s.length === 1 ? "0" + s : s
+    }
   }
 
   get link(): string {
