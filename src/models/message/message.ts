@@ -31,7 +31,7 @@ export class Message {
     const t = new Date(this.t * 1000)
 
     const YYYY = t.getFullYear()
-    const MM = t.getMonth()
+    const MM = t.getMonth() + 1
     const DD = t.getDate()
 
     const hh = t.getHours()
