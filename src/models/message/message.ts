@@ -35,7 +35,7 @@ export class Message {
     let MM = (t.getMonth() + 1).toString()
     MM = MM.length === 1 ? "0" + MM : MM
 
-    let DD = t.getDate()
+    let DD = t.getDate().toString()
     DD = DD.length === 1 ? "0" + DD : DD
 
     const hh = t.getHours()
