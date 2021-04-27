@@ -16,4 +16,4 @@
 - V 所对应的 VM 必须为一个 class 以便之后 refactor。
 - V 创建 VM instance 并且传递给所有 sub view。
 - V 中尽量只包含 view 相关的代码。
-- V 所对应的 全局 singleton 文件名后缀为 `-global-state.ts`。
+- V 所对应的 全局 singleton 文件名后缀为 `-state.ts` 前缀为 `global-`。
