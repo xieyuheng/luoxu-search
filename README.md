@@ -8,7 +8,7 @@
 > 提 issue 请保持礼貌
 > - 不要给同伴带来不必要的压力和负面情绪
 
-- 如有贡献，请将自己加到作者列表中 ^-^：[AUTHORS.md](AUTHORS.md)
+- 如有贡献，请将自己加到作者列表中 ^-^：[AUTHORS](AUTHORS)
 - issue 与 PR 可以参考：[The C4 RFC](https://rfc.zeromq.org/spec:42/C4)
 - 当前 TODO： [TODO.md](TODO.md)
 - 风格指南：[STYLE-GUIDE.md](STYLE-GUIDE.md)
