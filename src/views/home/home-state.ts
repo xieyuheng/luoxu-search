@@ -1,6 +1,6 @@
 import { Group } from "@/models/group"
 import { Message } from "@/models/message"
-import { luoxu_client_instance as client } from "@/clients/luoxu-client"
+import client from "@/clients/luoxu-client-instance"
 
 export class HomeState {
   query: string = ""
