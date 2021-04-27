@@ -50,7 +50,7 @@ export class Message {
   }
 
   get tg_link(): string {
-    return `tg://t.me/${this.group.pub_id}/${this.id}`
+    return `tg://resolve?domain=${this.group.pub_id}&post=${this.id}`
   }
 
   // NOTE luoxu-client api adopter functions
