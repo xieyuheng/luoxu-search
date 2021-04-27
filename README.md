@@ -3,7 +3,7 @@
 - 使用：https://luoxu-search.vercel.app
 - 后端：[luoxu](https://github.com/lilydjwg/luoxu)
 
-## 如何安装 / Installation
+## 开发 / Development
 
 - 本项目使用 vue 2 而不是 vue 3 版本。
 - `npm ci` 下载并安装依赖，而不是 `npm install`。
