@@ -5,7 +5,7 @@
     </p>
     <p class="py-2 break-words">{{ message.text }}</p>
     <div class="flex justify-end">
-      <a :href="message.link" class="underline">
+      <a :href="message.tg_link" class="underline">
         <p class="hover:text-gray-900 text-sm text-gray-500">
           {{ message.time }}
         </p>

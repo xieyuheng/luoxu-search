@@ -49,6 +49,10 @@ export class Message {
     return `https://t.me/${this.group.pub_id}/${this.id}`
   }
 
+  get tg_link(): string {
+    return `tg://t.me/${this.group.pub_id}/${this.id}`
+  }
+
   // NOTE luoxu-client api adopter functions
 
   static from_message_result_and_group(
