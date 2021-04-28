@@ -76,10 +76,10 @@ export default class extends Vue {
       q: this.state.query,
     }
 
+    await this.state.search()
+
     if (query.g !== this.$route.query.g || query.q !== this.$route.query.q) {
       this.$router.push({ path: "/search", query })
-
-      await this.state.search()
     }
   }
 }
