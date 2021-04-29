@@ -3,14 +3,6 @@
 - 使用：https://luoxu-search.vercel.app
 - 后端：[luoxu](https://github.com/lilydjwg/luoxu)
 
-## 开发 / Development
-
-- 本项目使用 vue 2 而不是 vue 3 版本。
-- `npm ci` 下载并安装依赖，而不是 `npm install`。
-  - 后者会更新版本并改变 package-lock.json 文件。
-- `npm run serve` 编译并运行。
-  - 默认会在本地的 8080 端口上开启一个 http server。
-
 ## 贡献 / Contributions
 
 > 提 issue 请保持礼貌

@@ -1,13 +1,13 @@
-import { RouteConfig } from "vue-router"
+import { RouteRecordRaw } from "vue-router"
 
-export const routes: Array<RouteConfig> = [
+export const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    component: () => import("@/views/home"),
+    component: require("@/views/home").default,
   },
   {
     path: "/search",
-    component: () => import("@/views/search"),
+    component: require("@/views/search").default,
     props: (route) => ({
       group_id: Number.parseInt(route.query.g as string),
       query: route.query.q,

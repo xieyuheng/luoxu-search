@@ -42,36 +42,43 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator"
+import { defineComponent, PropType, reactive, ref, onMounted } from "vue"
+import { useRouter, useRoute } from "vue-router"
 import { Group } from "@/models/group"
 import { HomeState as State } from "./home-state"
 
-@Component({
+export default defineComponent({
   name: "home",
+
   components: {
-    "home-pome": () => import("@/views/home/home-poem.vue"),
-    "icon-search-circle": () =>
-      import("@/components/icons/icon-search-circle.vue"),
+    "home-pome": require("@/views/home/home-poem.vue").default,
+    "icon-search-circle": require("@/components/icons/icon-search-circle.vue")
+      .default,
   },
-})
-export default class extends Vue {
-  state = new State()
 
-  selected_group_id: null | string = null
+  setup(props) {
+    const router = useRouter()
+    const route = useRoute()
 
-  async mounted(): Promise<void> {
-    await this.state.init()
-  }
+    const state = reactive<State>(new State())
+    const selected_group_id = ref<null | string>(null)
 
-  search(): void {
-    if (this.selected_group_id) {
+    onMounted(async () => {
+      await state.init()
+    })
+
+    async function search(): Promise<void> {
+      if (!selected_group_id.value) return
+
       const query = {
-        g: this.selected_group_id.toString(),
-        q: this.state.query,
+        g: selected_group_id.value.toString(),
+        q: state.query,
       }
 
-      this.$router.push({ path: "/search", query })
+      router.push({ path: "/search", query })
     }
-  }
-}
+
+    return { state, selected_group_id, search }
+  },
+})
 </script>

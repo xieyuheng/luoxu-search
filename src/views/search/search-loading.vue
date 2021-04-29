@@ -3,13 +3,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator"
+import { defineComponent, PropType } from "vue"
 import { SearchState as State } from "./search-state"
 
-@Component({
+export default defineComponent({
   name: "search-loading",
+  props: {
+    state: {
+      type: Object as PropType<State>,
+      required: true,
+    },
+  },
 })
-export default class extends Vue {
-  @Prop() state!: State
-}
 </script>
