@@ -1,11 +1,11 @@
-import Vue from "vue"
+import { createApp } from "vue"
+import { createRouter, createWebHistory } from "vue-router"
 import App from "./app.vue"
-import router from "./router"
 import "./styles/index.css"
 
-Vue.config.productionTip = false
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes: require("@/views/routes").routes,
+})
 
-new Vue({
-  router,
-  render: (h) => h(App),
-}).$mount("#app")
+createApp(App).use(router).mount("#app")

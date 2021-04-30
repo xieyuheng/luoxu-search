@@ -45,42 +45,51 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator"
+import { defineComponent, PropType, reactive, onMounted } from "vue"
+import { useRouter, useRoute } from "vue-router"
 import { SearchState as State } from "./search-state"
 
-@Component({
+export default defineComponent({
   name: "search",
   components: {
-    "message-card": () => import("@/components/message-card"),
-    "search-loading": () => import("@/views/search/search-loading.vue"),
-    "icon-search-circle": () =>
-      import("@/components/icons/icon-search-circle.vue"),
+    "message-card": require("@/components/message-card").default,
+    "search-loading": require("@/views/search/search-loading.vue").default,
+    "icon-search-circle": require("@/components/icons/icon-search-circle.vue")
+      .default,
+  },
+  props: {
+    group_id: { type: Number, required: true },
+    query: { type: String, required: true },
+  },
+  setup(props) {
+    const router = useRouter()
+    const route = useRoute()
+
+    const state = reactive<State>(
+      new State({
+        group_id: props.group_id,
+        query: props.query,
+      })
+    )
+
+    onMounted(async () => {
+      await state.search()
+    })
+
+    async function search(): Promise<void> {
+      const query = {
+        g: props.group_id.toString(),
+        q: state.query,
+      }
+
+      await state.search()
+
+      if (query.g !== route.query.g || query.q !== route.query.q) {
+        router.push({ path: "/search", query })
+      }
+    }
+
+    return { state, search }
   },
 })
-export default class extends Vue {
-  @Prop() group_id!: number
-  @Prop() query!: string
-
-  state = new State({
-    group_id: this.group_id,
-    query: this.query,
-  })
-
-  async mounted(): Promise<void> {
-    await this.state.search()
-  }
-
-  async search(): Promise<void> {
-    const query = {
-      g: this.group_id.toString(),
-      q: this.state.query,
-    }
-
-    if (query.g !== this.$route.query.g || query.q !== this.$route.query.q) {
-      this.$router.push({ path: "/search", query })
-
-      await this.state.search()
-    }
-  }
-}
 </script>

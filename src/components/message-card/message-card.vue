@@ -15,13 +15,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator"
+import { defineComponent, PropType } from "vue"
 import { Message } from "@/models/message"
 
-@Component({
+export default defineComponent({
   name: "message-card",
+  props: {
+    message: {
+      type: Object as PropType<Message>,
+      required: true,
+    },
+  },
 })
-export default class extends Vue {
-  @Prop() message!: Message
-}
 </script>
