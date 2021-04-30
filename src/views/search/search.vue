@@ -34,7 +34,7 @@
           找到 {{ state.messages.length }} 条消息 --
         </div>
         <div v-for="message in state.messages" class="py-2">
-          <message-card :message="message" />
+          <message-card :message="message" :search="state.query" />
         </div>
       </div>
     </div>
