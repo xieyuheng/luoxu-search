@@ -19,12 +19,11 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue"
 import { Message } from "@/models/message"
-import Highlight from "../highlight/highlight.vue"
 
 export default defineComponent({
   name: "message-card",
   components: {
-    Highlight,
+    highlight: require("@/components/highlight").default,
   },
   props: {
     message: {
