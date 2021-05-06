@@ -33,8 +33,12 @@
         <div class="px-1 py-2 text-gray-500">
           找到 {{ state.messages.length }} 条消息 --
         </div>
-        <div v-for="message in state.messages" class="py-2">
-          <message-card :message="message" />
+        <div
+          v-for="message in state.messages"
+          class="py-2"
+          :key="message.id + ',' + state.query"
+        >
+          <message-card :message="message" :search="state.query" />
         </div>
       </div>
     </div>
