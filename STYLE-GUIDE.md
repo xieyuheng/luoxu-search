@@ -4,6 +4,8 @@
 
 ## 命名 / Nameing convention
 
+- 虽然是前端项目，但是我们用 `under_line` 的风格来断词，而不用 `camelCase`，
+  这是为了让本项目 Python API endpoint 方面的同伴能更容易地参与前端代码的维护。
 - module 中，禁止用 `_` 前缀来区分函数或变量是否被 `export`，
   用 `export` 语法关键词本身来区分。
 - 文件名断词用 `-`。
