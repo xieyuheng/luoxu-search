@@ -46,6 +46,6 @@ export default defineComponent({
   background-color: #68932f22;
 }
 .message-card:hover .highlight {
-  background-color: #68932f22;
+  background-color: #68932f66;
 }
 </style>
