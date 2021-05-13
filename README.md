@@ -3,7 +3,7 @@
 Telegram 中文群组历史消息搜索
 
 - 使用：https://luoxu-search.vercel.app
-- 后端：[luoxu](https://github.com/lilydjwg/luoxu)
+- 后端：https://github.com/lilydjwg/luoxu
 
 ## 贡献 / Contributions
 
