@@ -43,7 +43,9 @@ export default defineComponent({
 </script>
 <style scoped>
 .highlight {
-  background-color: #68932f;
-  color: #d2ff96;
+  background-color: #68932f22;
+}
+.message-card:hover .highlight {
+  background-color: #68932f66;
 }
 </style>
