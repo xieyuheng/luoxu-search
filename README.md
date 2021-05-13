@@ -5,6 +5,11 @@ Telegram 中文群组历史消息搜索
 - 使用：https://luoxu-search.vercel.app
 - 后端：https://github.com/lilydjwg/luoxu
 
+## 测试 / Testing
+
+- node 版本：`14`
+- npm 版本：`7`
+
 ## 贡献 / Contributions
 
 > 请保持礼貌 不要给同伴带来负面情绪
