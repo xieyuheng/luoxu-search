@@ -53,6 +53,10 @@ export class Message {
     return `tg://resolve?domain=${this.group.pub_id}&post=${this.id}`
   }
 
+  get avatar(): string {
+    return `https://lab.lilydjwg.me/luoxu/avatar/${this.from_id}`
+  }
+
   // NOTE luoxu-client api adopter functions
 
   static from_message_result_and_group(
