@@ -2,7 +2,8 @@
   <div class="message-card max-w-max px-3 py-1 border border-gray-300 rounded-lg shadow-sm">
     <div class="flex flex-row space-x-4">
       <span>
-        <img class="object-contain h-16 avatar" :src="message.avatar" :alt="message.id">
+        <!-- <img class="object-contain h-16 avatar" :src="message.avatar" :alt="message.id"/> -->
+        <avatar class="object-contain h-16 avatar" :src="message.avatar" :username="message.from_name"/>
       </span>
       <span>
         <p class="flex justify-between py-1 text-xs font-bold text-gray-600">
@@ -31,6 +32,7 @@ export default defineComponent({
   name: "message-card",
   components: {
     highlight: require("@/components/highlight").default,
+    avatar: require("@/components/avatar").default,
   },
   props: {
     message: {
