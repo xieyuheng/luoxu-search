@@ -26,7 +26,7 @@ export default defineComponent({
     messageItemList(): { text: string; matched: boolean; id: number }[] {
       if (!this.search) return [{ text: this.message, matched: false, id: 1 }]
       const santilized = this.search?.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
-      const re = new RegExp(`([^${santilized}]*)([${santilized}])`, "ig")
+      const re = new RegExp(`([^${santilized}]*)(${santilized})`, "ig")
       const result = []
       let match
       let savedLastIndex = 0
