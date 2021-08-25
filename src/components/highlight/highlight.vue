@@ -1,6 +1,6 @@
 <template>
   <!-- v-for with template seems broken-->
-  <span v-for="message in messageItemList" :key="message.id">
+  <span v-for="message in messageItemList2" :key="message.id">
     <span class="highlight" v-if="message.matched">{{ message.text }}</span>
     <span v-else>{{ message.text }}</span>
   </span>
@@ -26,6 +26,7 @@ export default defineComponent({
     messageItemList(): { text: string; matched: boolean; id: number }[] {
       if (!this.search) return [{ text: this.message, matched: false, id: 1 }]
       const santilized = this.search?.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#escaping
       const re = new RegExp(`([^${santilized}]*)([${santilized}])`, "ig")
       const result = []
       let match
@@ -33,6 +34,22 @@ export default defineComponent({
       while ((match = re.exec(this.message)) !== null) {
         result.push({ text: match[1], matched: false })
         result.push({ text: match[2], matched: true })
+        savedLastIndex = re.lastIndex
+      }
+      result.push({ text: this.message.slice(savedLastIndex), matched: false })
+      return result.filter((e) => !!e.text).map((e, i) => ({ ...e, id: i + 1 }))
+    },
+    // need a better name
+    messageItemList2(): { text: string; matched: boolean; id: number }[] {
+      if (!this.search) return [{ text: this.message, matched: false, id: 1 }]
+      const santilized = this.search?.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+      const re = new RegExp(santilized, "ig")
+      const result = []
+      let match
+      let savedLastIndex = 0
+      while ((match = re.exec(this.message)) !== null) {
+        result.push({ text: this.message.slice(savedLastIndex, match.index), matched: false })
+        result.push({ text: match[0], matched: true })
         savedLastIndex = re.lastIndex
       }
       result.push({ text: this.message.slice(savedLastIndex), matched: false })
