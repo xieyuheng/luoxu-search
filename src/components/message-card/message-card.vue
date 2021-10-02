@@ -5,7 +5,7 @@
     <p class="flex justify-between py-1 text-xs font-bold text-gray-600">
       {{ message.from_name }}
     </p>
-    <p class="py-2 break-words whitespace-pre-line" v-html="text"></p>
+    <p class="py-2 break-words whitespace-pre-line">{{ message.text }}</p>
     <div class="flex justify-end">
       <a :href="message.tg_link" class="underline">
         <p class="hover:text-gray-900 text-sm text-gray-500">
@@ -19,7 +19,6 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue"
 import { Message } from "@/models/message"
-const fuzzysort = require("fuzzysort")
 
 export default defineComponent({
   name: "message-card",
@@ -31,15 +30,6 @@ export default defineComponent({
     search: {
       type: String,
       required: false,
-    },
-  },
-  computed: {
-    text(): string {
-      return fuzzysort.highlight(
-        fuzzysort.single(this.search, this.message.text),
-        "<span class='bg-yellow-100'>",
-        "</span>"
-      )
     },
   },
 })
