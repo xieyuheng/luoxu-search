@@ -1,3 +1,6 @@
+> 请使用功能更完善的：https://luoxu-web.vercel.app
+> - 项目仓库：https://github.com/lilydjwg/luoxu-web
+
 # 落絮搜索 / Luoxu Search
 
 Telegram 中文群组历史消息搜索
