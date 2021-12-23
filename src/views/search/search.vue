@@ -8,7 +8,15 @@
           </h1>
           <form class="md:px-0 w-full px-3 py-1" @submit.prevent="search">
             <div
-              class="md:w-4/5 flex w-full px-2 border-2 border-gray-200 rounded-lg shadow-md"
+              class="
+                md:w-4/5
+                flex
+                w-full
+                px-2
+                border-2 border-gray-200
+                rounded-lg
+                shadow-md
+              "
             >
               <input
                 v-model="state.query"
@@ -55,11 +63,11 @@ import { SearchState as State } from "./search-state"
 
 export default defineComponent({
   name: "search",
+  // prettier-ignore
   components: {
     "message-card": require("@/components/message-card").default,
     "search-loading": require("@/views/search/search-loading.vue").default,
-    "icon-search-circle": require("@/components/icons/icon-search-circle.vue")
-      .default,
+    "icon-search-circle": require("@/components/icons/icon-search-circle.vue").default,
   },
   props: {
     group_id: { type: Number, required: true },
